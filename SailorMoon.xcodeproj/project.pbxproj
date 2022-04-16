@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		021360C8BE598D630CE9F112 /* Pods_SailorMoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */; };
+		2C4D21A6280AA11C0094E8C6 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D21A5280AA11C0094E8C6 /* ContentModel.swift */; };
+		2C4D21AC280AB68E0094E8C6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D21AB280AB68E0094E8C6 /* ContentViewController.swift */; };
+		2C4D21AE280AE4E80094E8C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D21AD280AE4E80094E8C6 /* Extension.swift */; };
 		4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366A280A69E600007603 /* AppDelegate.swift */; };
 		4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366E280A69E600007603 /* MainPageTableViewController.swift */; };
 		4D6B3672280A69E600007603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3670280A69E600007603 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4D21A5280AA11C0094E8C6 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = SOURCE_ROOT; };
+		2C4D21AB280AB68E0094E8C6 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = SOURCE_ROOT; };
+		2C4D21AD280AE4E80094E8C6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = SOURCE_ROOT; };
 		3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.debug.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6B3667280A69E600007603 /* SailorMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailorMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B366A280A69E600007603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,14 @@
 				89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C4D21A4280AA10D0094E8C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C4D21A5280AA11C0094E8C6 /* ContentModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4D6B365E280A69E600007603 = {
@@ -98,6 +112,8 @@
 		4D6B3680280A70F900007603 /* ShowNoteCollectionPage */ = {
 			isa = PBXGroup;
 			children = (
+				2C4D21A4280AA10D0094E8C6 /* Model */,
+				2C4D21AB280AB68E0094E8C6 /* ContentViewController.swift */,
 			);
 			path = ShowNoteCollectionPage;
 			sourceTree = "<group>";
@@ -112,6 +128,7 @@
 		4D6B3682280A71A700007603 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2C4D21AD280AE4E80094E8C6 /* Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -262,7 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4D21AC280AB68E0094E8C6 /* ContentViewController.swift in Sources */,
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
+				2C4D21A6280AA11C0094E8C6 /* ContentModel.swift in Sources */,
+				2C4D21AE280AE4E80094E8C6 /* Extension.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
 			);
