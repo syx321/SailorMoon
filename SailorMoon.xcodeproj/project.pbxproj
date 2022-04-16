@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		021360C8BE598D630CE9F112 /* Pods_SailorMoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */; };
+		2C9D553B280B0A1B008FBFA9 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D553A280B0A1B008FBFA9 /* UITextField+Extension.swift */; };
+		2C9D553E280B0D3E008FBFA9 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D553D280B0D3E008FBFA9 /* ContentModel.swift */; };
+		2C9D5540280B0D44008FBFA9 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D553F280B0D44008FBFA9 /* ContentViewController.swift */; };
 		4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366A280A69E600007603 /* AppDelegate.swift */; };
 		4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366E280A69E600007603 /* MainPageTableViewController.swift */; };
 		4D6B3672280A69E600007603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3670280A69E600007603 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C9D553A280B0A1B008FBFA9 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		2C9D553D280B0D3E008FBFA9 /* ContentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = SOURCE_ROOT; };
+		2C9D553F280B0D44008FBFA9 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.debug.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6B3667280A69E600007603 /* SailorMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailorMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B366A280A69E600007603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,14 @@
 				89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C9D553C280B0D2E008FBFA9 /* ContentModel */ = {
+			isa = PBXGroup;
+			children = (
+				2C9D553D280B0D3E008FBFA9 /* ContentModel.swift */,
+			);
+			name = ContentModel;
 			sourceTree = "<group>";
 		};
 		4D6B365E280A69E600007603 = {
@@ -120,6 +134,8 @@
 		4D6B3681280A711900007603 /* NoteEditPage */ = {
 			isa = PBXGroup;
 			children = (
+				2C9D553C280B0D2E008FBFA9 /* ContentModel */,
+				2C9D553F280B0D44008FBFA9 /* ContentViewController.swift */,
 			);
 			path = NoteEditPage;
 			sourceTree = "<group>";
@@ -128,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6B3697280AEE3500007603 /* UIColor+Extension.swift */,
+				2C9D553A280B0A1B008FBFA9 /* UITextField+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -329,8 +346,11 @@
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
+				2C9D553B280B0A1B008FBFA9 /* UITextField+Extension.swift in Sources */,
 				4D6B368A280AA17000007603 /* MainPageUseCase.swift in Sources */,
 				4D6B369D280AF82200007603 /* ShowNoteCollectionPageController.swift in Sources */,
+				2C9D553E280B0D3E008FBFA9 /* ContentModel.swift in Sources */,
+				2C9D5540280B0D44008FBFA9 /* ContentViewController.swift in Sources */,
 				4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */,
 				4D6B368C280AA42900007603 /* MainPageCellModel.swift in Sources */,
 			);
