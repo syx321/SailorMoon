@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		021360C8BE598D630CE9F112 /* Pods_SailorMoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */; };
 		4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366A280A69E600007603 /* AppDelegate.swift */; };
-		4D6B366F280A69E600007603 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366E280A69E600007603 /* ViewController.swift */; };
+		4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366E280A69E600007603 /* MainPageTableViewController.swift */; };
 		4D6B3672280A69E600007603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3670280A69E600007603 /* Main.storyboard */; };
 		4D6B3674280A69E600007603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3673280A69E600007603 /* Assets.xcassets */; };
 		4D6B3677280A69E600007603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3675280A69E600007603 /* LaunchScreen.storyboard */; };
+		4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B3687280A77A300007603 /* MainPageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.debug.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6B3667280A69E600007603 /* SailorMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailorMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B366A280A69E600007603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D6B366E280A69E600007603 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D6B366E280A69E600007603 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
 		4D6B3671280A69E600007603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D6B3673280A69E600007603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D6B3676280A69E600007603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6B3678280A69E600007603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D6B3687280A77A300007603 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,10 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				4D6B366A280A69E600007603 /* AppDelegate.swift */,
-				4D6B366E280A69E600007603 /* ViewController.swift */,
 				4D6B367F280A70D000007603 /* MainPage */,
-				4D6B3681280A711900007603 /* NoteEditPage */,
 				4D6B3680280A70F900007603 /* ShowNoteCollectionPage */,
+				4D6B3681280A711900007603 /* NoteEditPage */,
 				4D6B3682280A71A700007603 /* Util */,
 				4D6B3670280A69E600007603 /* Main.storyboard */,
 				4D6B3673280A69E600007603 /* Assets.xcassets */,
@@ -86,6 +87,10 @@
 		4D6B367F280A70D000007603 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				4D6B366E280A69E600007603 /* MainPageTableViewController.swift */,
+				4D6B3685280A76EC00007603 /* Model */,
+				4D6B3684280A76E600007603 /* UseCase */,
+				4D6B3683280A76DE00007603 /* View */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -111,13 +116,34 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		4D6B3683280A76DE00007603 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B3687280A77A300007603 /* MainPageTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D6B3684280A76E600007603 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4D6B3685280A76EC00007603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		750A88EFA929CEBD8C6624A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */,
 				5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -236,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6B366F280A69E600007603 /* ViewController.swift in Sources */,
+				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
+				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -367,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
