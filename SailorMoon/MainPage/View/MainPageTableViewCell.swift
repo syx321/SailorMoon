@@ -50,11 +50,12 @@ class MainPageTableViewCell: UITableViewCell {
     }
     
     func setupConstraints() {
-//        self.selectionStyle = .none
-        self.layer.borderWidth = 1
+        self.selectionStyle = .none
+        self.layer.borderWidth = 1.5
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
+        self.backgroundColor = .white()
         circle.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(5)
             make.width.height.equalTo(50)
@@ -82,8 +83,6 @@ class MainPageTableViewCell: UITableViewCell {
             self.circle.backgroundColor = .blue
         case .none:
             self.circle.backgroundColor = .none
-            
         }
-        
     }
 }

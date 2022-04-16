@@ -62,7 +62,7 @@ class SMNavigationView: UIView {
     
     lazy var line: UIView = {
         let v = UIView()
-        v.backgroundColor = .black
+        v.backgroundColor = UIColor.black
         return v
     }()
     
@@ -72,7 +72,7 @@ class SMNavigationView: UIView {
     }
     
     private func setupUI() -> Void {
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor.backgroundColor()
         addSubview(backButton)
         backButton.snp.makeConstraints { (make) in
             make.leading.equalToSuperview().inset(itemBigSpace)

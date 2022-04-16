@@ -17,6 +17,8 @@
 		4D6B368A280AA17000007603 /* MainPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B3689280AA17000007603 /* MainPageUseCase.swift */; };
 		4D6B368C280AA42900007603 /* MainPageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B368B280AA42900007603 /* MainPageCellModel.swift */; };
 		4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B368E280AAAE100007603 /* SMNavigationView.swift */; };
+		4D6B3698280AEE3500007603 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B3697280AEE3500007603 /* UIColor+Extension.swift */; };
+		4D6B369D280AF82200007603 /* ShowNoteCollectionPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		4D6B3689280AA17000007603 /* MainPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUseCase.swift; sourceTree = "<group>"; };
 		4D6B368B280AA42900007603 /* MainPageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCellModel.swift; sourceTree = "<group>"; };
 		4D6B368E280AAAE100007603 /* SMNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMNavigationView.swift; sourceTree = "<group>"; };
+		4D6B3697280AEE3500007603 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteCollectionPageController.swift; sourceTree = "<group>"; };
 		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +109,10 @@
 		4D6B3680280A70F900007603 /* ShowNoteCollectionPage */ = {
 			isa = PBXGroup;
 			children = (
+				4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */,
+				4D6B3699280AF79700007603 /* View */,
+				4D6B369A280AF79F00007603 /* Model */,
+				4D6B369B280AF7A400007603 /* UseCase */,
 			);
 			path = ShowNoteCollectionPage;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 		4D6B3682280A71A700007603 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				4D6B3697280AEE3500007603 /* UIColor+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -169,6 +178,27 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4D6B3699280AF79700007603 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D6B369A280AF79F00007603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D6B369B280AF7A400007603 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		750A88EFA929CEBD8C6624A4 /* Pods */ = {
@@ -295,10 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6B3698280AEE3500007603 /* UIColor+Extension.swift in Sources */,
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
 				4D6B368A280AA17000007603 /* MainPageUseCase.swift in Sources */,
+				4D6B369D280AF82200007603 /* ShowNoteCollectionPageController.swift in Sources */,
 				4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */,
 				4D6B368C280AA42900007603 /* MainPageCellModel.swift in Sources */,
 			);
