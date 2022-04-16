@@ -14,6 +14,9 @@
 		4D6B3674280A69E600007603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3673280A69E600007603 /* Assets.xcassets */; };
 		4D6B3677280A69E600007603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3675280A69E600007603 /* LaunchScreen.storyboard */; };
 		4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B3687280A77A300007603 /* MainPageTableViewCell.swift */; };
+		4D6B368A280AA17000007603 /* MainPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B3689280AA17000007603 /* MainPageUseCase.swift */; };
+		4D6B368C280AA42900007603 /* MainPageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B368B280AA42900007603 /* MainPageCellModel.swift */; };
+		4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B368E280AAAE100007603 /* SMNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		4D6B3676280A69E600007603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6B3678280A69E600007603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D6B3687280A77A300007603 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
+		4D6B3689280AA17000007603 /* MainPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUseCase.swift; sourceTree = "<group>"; };
+		4D6B368B280AA42900007603 /* MainPageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCellModel.swift; sourceTree = "<group>"; };
+		4D6B368E280AAAE100007603 /* SMNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMNavigationView.swift; sourceTree = "<group>"; };
 		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +82,7 @@
 				4D6B3680280A70F900007603 /* ShowNoteCollectionPage */,
 				4D6B3681280A711900007603 /* NoteEditPage */,
 				4D6B3682280A71A700007603 /* Util */,
+				4D6B368D280AAAC100007603 /* SMUIKit */,
 				4D6B3670280A69E600007603 /* Main.storyboard */,
 				4D6B3673280A69E600007603 /* Assets.xcassets */,
 				4D6B3675280A69E600007603 /* LaunchScreen.storyboard */,
@@ -127,11 +134,37 @@
 		4D6B3684280A76E600007603 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				4D6B3689280AA17000007603 /* MainPageUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
 		};
 		4D6B3685280A76EC00007603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B368B280AA42900007603 /* MainPageCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D6B368D280AAAC100007603 /* SMUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B3692280AB19500007603 /* View */,
+				4D6B3693280AB1A100007603 /* Model */,
+			);
+			path = SMUIKit;
+			sourceTree = "<group>";
+		};
+		4D6B3692280AB19500007603 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B368E280AAAE100007603 /* SMNavigationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D6B3693280AB1A100007603 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -265,6 +298,9 @@
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
+				4D6B368A280AA17000007603 /* MainPageUseCase.swift in Sources */,
+				4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */,
+				4D6B368C280AA42900007603 /* MainPageCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
