@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021360C8BE598D630CE9F112 /* Pods_SailorMoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */; };
 		4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366A280A69E600007603 /* AppDelegate.swift */; };
-		4D6B366D280A69E600007603 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366C280A69E600007603 /* SceneDelegate.swift */; };
 		4D6B366F280A69E600007603 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366E280A69E600007603 /* ViewController.swift */; };
 		4D6B3672280A69E600007603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3670280A69E600007603 /* Main.storyboard */; };
 		4D6B3674280A69E600007603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B3673280A69E600007603 /* Assets.xcassets */; };
@@ -16,14 +16,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.debug.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6B3667280A69E600007603 /* SailorMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailorMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B366A280A69E600007603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D6B366C280A69E600007603 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D6B366E280A69E600007603 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D6B3671280A69E600007603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D6B3673280A69E600007603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D6B3676280A69E600007603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6B3678280A69E600007603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
+		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021360C8BE598D630CE9F112 /* Pods_SailorMoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28E6FA52A225BF69BEDA1B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D6B365E280A69E600007603 = {
 			isa = PBXGroup;
 			children = (
 				4D6B3669280A69E600007603 /* SailorMoon */,
 				4D6B3668280A69E600007603 /* Products */,
+				750A88EFA929CEBD8C6624A4 /* Pods */,
+				28E6FA52A225BF69BEDA1B4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +70,55 @@
 			isa = PBXGroup;
 			children = (
 				4D6B366A280A69E600007603 /* AppDelegate.swift */,
-				4D6B366C280A69E600007603 /* SceneDelegate.swift */,
 				4D6B366E280A69E600007603 /* ViewController.swift */,
+				4D6B367F280A70D000007603 /* MainPage */,
+				4D6B3681280A711900007603 /* NoteEditPage */,
+				4D6B3680280A70F900007603 /* ShowNoteCollectionPage */,
+				4D6B3682280A71A700007603 /* Util */,
 				4D6B3670280A69E600007603 /* Main.storyboard */,
 				4D6B3673280A69E600007603 /* Assets.xcassets */,
 				4D6B3675280A69E600007603 /* LaunchScreen.storyboard */,
 				4D6B3678280A69E600007603 /* Info.plist */,
 			);
 			path = SailorMoon;
+			sourceTree = "<group>";
+		};
+		4D6B367F280A70D000007603 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		4D6B3680280A70F900007603 /* ShowNoteCollectionPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowNoteCollectionPage;
+			sourceTree = "<group>";
+		};
+		4D6B3681280A711900007603 /* NoteEditPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NoteEditPage;
+			sourceTree = "<group>";
+		};
+		4D6B3682280A71A700007603 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		750A88EFA929CEBD8C6624A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */,
+				5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D6B367B280A69E600007603 /* Build configuration list for PBXNativeTarget "SailorMoon" */;
 			buildPhases = (
+				5C1659F0D65B759B7BA813BE /* [CP] Check Pods Manifest.lock */,
 				4D6B3663280A69E600007603 /* Sources */,
 				4D6B3664280A69E600007603 /* Frameworks */,
 				4D6B3665280A69E600007603 /* Resources */,
+				1E4F0C8AA47CEF3BC5A8B166 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +189,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E4F0C8AA47CEF3BC5A8B166 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SailorMoon/Pods-SailorMoon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SailorMoon/Pods-SailorMoon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SailorMoon/Pods-SailorMoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1659F0D65B759B7BA813BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SailorMoon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D6B3663280A69E600007603 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +238,6 @@
 			files = (
 				4D6B366F280A69E600007603 /* ViewController.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
-				4D6B366D280A69E600007603 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +379,7 @@
 		};
 		4D6B367C280A69E600007603 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +408,7 @@
 		};
 		4D6B367D280A69E600007603 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
