@@ -8,7 +8,7 @@
 import Foundation
 
 class ShowNoteUseCase: NSObject {
-    func getMainPageModels(completion: ([ShowNoteModel?]) -> Void) {
-        completion([ShowNoteModel(title: "某个便签", note: "这是主要内容")])
+    func getMainPageModels(completion: ([ContentModel?]) -> Void) {
+        completion([ContentModel(title: "title", content: "content", updateTime: nil, buildTime: nil, coverImage: nil)])
     }
 }

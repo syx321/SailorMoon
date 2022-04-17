@@ -29,7 +29,7 @@ class ContentViewController: UIViewController {
         imageView.tintColor = .secondaryLabel
         let config = UIImage.SymbolConfiguration(pointSize: 46, weight: .medium, scale: .large)
         let image = UIImage(systemName: "plus", withConfiguration: config)
-        imageView.image = contentModel?.coverImage ?? image
+        imageView.image = image
         return imageView
     }()
     
@@ -142,7 +142,8 @@ class ContentViewController: UIViewController {
             make.bottom.equalTo(view.snp.bottom)
         }
         
-        
+        let backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(backAndStore))
+        self.navigationItem.leftBarButtonItem = backBarButtonItem
         
     }
     
@@ -160,15 +161,16 @@ class ContentViewController: UIViewController {
     @objc func clickBuildTimeView() {
         displayUpdateTimeLable = !displayUpdateTimeLable
         if displayUpdateTimeLable {
-            timeLable.text = "更新于: \(contentModel?.updateAt ?? Date.now)"
+            timeLable.text = "更新于: \(contentModel?.updateTime ?? Date.now)"
         } else {
             timeLable.text = "创建于: \(contentModel?.buildTime ?? Date.now)"
         }
         
     }
     
-    
-    
+    @objc func backAndStore() {
+        //
+    }
 }
 
 // 选择照片功能

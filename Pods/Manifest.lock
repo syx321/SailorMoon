@@ -1,7 +1,9 @@
 PODS:
+  - DateToolsSwift (5.0.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - DateToolsSwift
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
@@ -9,8 +11,9 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  DateToolsSwift: 4207ada6ad615d8dc076323d27037c94916dbfa6
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 2b872228fdd00569dd1397c2c5c69d55e4274784
+PODFILE CHECKSUM: 50374c399e831062dc34bca1c4206a32a52d3a32
 
 COCOAPODS: 1.11.3

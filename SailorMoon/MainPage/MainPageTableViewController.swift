@@ -15,13 +15,13 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     //MARK: UI
     private lazy var containerView: UIView = {
         var v = UIView()
-        v.backgroundColor = UIColor.backgroundColor()
+        v.backgroundColor = UIColor.white()
         return v
     }()
     
     private lazy var tableView: UITableView = {
         var v = UITableView()
-        v.backgroundColor = UIColor.backgroundColor()
+//        v.backgroundColor = UIColor.white()
         v.showsVerticalScrollIndicator = false
         v.dataSource = self
         v.delegate = self
@@ -66,7 +66,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func setupConstraints() {
-        self.view.backgroundColor = UIColor.backgroundColor()
+        self.view.backgroundColor = UIColor.white()
         self.navigationController?.navigationBar.isHidden = true
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -76,8 +76,8 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
             make.height.equalTo(85)
         }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp.bottom).offset(3)
-            make.left.right.equalToSuperview().inset(12)
+            make.top.equalToSuperview().offset(100)
+            make.left.right.equalToSuperview().inset(5)
             make.bottom.equalToSuperview()
         }
     }
@@ -112,4 +112,16 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
         70
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        self.dataSource.remove(at: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
 }

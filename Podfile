@@ -8,5 +8,6 @@ target 'SailorMoon' do
 
   # Pods for SailorMoon
   pod 'SnapKit', '~> 5.6.0'
+  pod 'DateToolsSwift'
 
 end

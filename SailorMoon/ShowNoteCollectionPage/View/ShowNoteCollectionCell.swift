@@ -10,20 +10,35 @@ import UIKit
 
 class ShowNoteCollectionCell: UICollectionViewCell {
     
-    private lazy var titleLabel: UILabel = {
-        var v = UILabel()
-        v.font = .boldSystemFont(ofSize: 40)
+    private lazy var containerView: UIView = {
+        var v = UIView()
+        v.layer.cornerRadius = 15;
+        v.layer.masksToBounds = true;
+        v.isUserInteractionEnabled = true;
+        v.contentMode = .scaleAspectFill
+        v.backgroundColor = .white()
         return v
     }()
     
-    private lazy var note: UILabel = {
+    private lazy var titleLabel: UILabel = {
         var v = UILabel()
-        v.font = .systemFont(ofSize: 38)
+        v.font = .boldSystemFont(ofSize: 30)
+        return v
+    }()
+    
+    private lazy var content: UILabel = {
+        var v = UILabel()
+        v.font = .systemFont(ofSize: 25)
+        v.lineBreakMode = .byCharWrapping
+        v.numberOfLines = 7
+        v.textAlignment = .justified
         return v
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setupSubviews()
+        self.setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -31,8 +46,9 @@ class ShowNoteCollectionCell: UICollectionViewCell {
     }
     
     func setupSubviews() {
-        addSubview(titleLabel)
-        addSubview(note)
+        addSubview(containerView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(content)
     }
     
     func setupConstraints() {
@@ -41,14 +57,21 @@ class ShowNoteCollectionCell: UICollectionViewCell {
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
         self.backgroundColor = .white()
-        titleLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(10)
-            make.height.equalTo(20)
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
-        note.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom)
+        titleLabel.snp.makeConstraints { make in
+            make.left.top.equalToSuperview().inset(10)
+            make.height.equalTo(23)
+        }
+        content.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(3)
         }
     }
     
+    func updateUIWithModel(_ model: ContentModel) {
+        self.titleLabel.text = model.title!
+        self.content.text = model.content!
+    }
 }

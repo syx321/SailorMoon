@@ -31,3 +31,22 @@ class TextField: UITextField {
     
 }
 
+extension TextField{
+    //计算属性  解包
+    var unwarpText: String{
+        text ?? ""
+    }
+    var exctString: String {
+        unwarpText.isBlank ? "" : unwarpText
+    }
+}
+extension UITextView{
+    //计算属性  解包
+    var unwarpText: String{
+        text ?? ""
+    }
+    var exctString: String {
+        unwarpText.isBlank ? "" : unwarpText
+    }
+}
+

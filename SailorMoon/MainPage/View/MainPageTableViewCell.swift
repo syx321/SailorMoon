@@ -10,6 +10,11 @@ import UIKit
 
 class MainPageTableViewCell: UITableViewCell {
     
+    private lazy var containerView: UIView = {
+        var v = UIView()
+        return v
+    }()
+    
     private lazy var circle: UIView = {
         var v = UIView()
         v.layer.cornerRadius = 25; //设置圆形的程度
@@ -43,18 +48,22 @@ class MainPageTableViewCell: UITableViewCell {
     }
     
     func setupSubviews() {
-        addSubview(circle)
-        addSubview(titleLabel)
-        addSubview(indicator)
+        addSubview(containerView)
+        containerView.addSubview(circle)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(indicator)
     }
     
     func setupConstraints() {
         self.selectionStyle = .none
-        self.layer.borderWidth = 1.5
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.cornerRadius = 15
-        self.layer.masksToBounds = true
-        self.backgroundColor = .white()
+        containerView.layer.borderWidth = 1.5
+        containerView.layer.borderColor = UIColor.black.cgColor
+        containerView.layer.cornerRadius = 15
+        containerView.layer.masksToBounds = true
+        
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(5)
+        }
         circle.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(5)
             make.width.height.equalTo(50)

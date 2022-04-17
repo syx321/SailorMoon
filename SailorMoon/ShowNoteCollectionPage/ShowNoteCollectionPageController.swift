@@ -22,9 +22,9 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
         var v = UICollectionViewFlowLayout()
         v.scrollDirection = .vertical
         v.sectionInset = .zero
-        v.minimumLineSpacing = 12;
-        v.minimumInteritemSpacing = 12;
-        v.itemSize = CGSize(width: 175, height: 234)
+        v.minimumLineSpacing = 10;
+        v.minimumInteritemSpacing = 10;
+        v.itemSize = CGSize(width: 170, height: 245)
         return v
     }()
     
@@ -36,6 +36,8 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
         v.showsVerticalScrollIndicator = false;
         v.showsHorizontalScrollIndicator = false;
         v.layer.masksToBounds = false;
+        v.backgroundColor = .white()
+        v.contentInsetAdjustmentBehavior = .automatic
         v.register(ShowNoteCollectionCell.self, forCellWithReuseIdentifier: NSStringFromClass(ShowNoteCollectionCell.self))
         return v
     }()
@@ -50,7 +52,7 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
     }()
     
     //MARK: data
-    var dataSource: [ShowNoteModel?] = []
+    var dataSource: [ContentModel?] = []
     let useCase = ShowNoteUseCase()
     
     //MARK: 生命周期
@@ -66,6 +68,12 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
         containerView.addSubview(navigationView)
         navigationView.updateUI()
         containerView.addSubview(collectionView)
+        
+        navigationView.actionEvent = { [weak self] event in
+            if event == .back {
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     private func setupConstraints() {
@@ -79,8 +87,8 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
             make.height.equalTo(85)
         }
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp.bottom).offset(3)
-            make.left.right.equalToSuperview().inset(12)
+            make.top.equalToSuperview().offset(100)
+            make.left.right.equalToSuperview().inset(15)
             make.bottom.equalToSuperview()
         }
     }
@@ -91,15 +99,25 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
             self!.collectionView.reloadData()
         }
     }
+    
+    //MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(ShowNoteCollectionCell.self), for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(ShowNoteCollectionCell.self), for: indexPath) as! ShowNoteCollectionCell
+        let model = self.dataSource[indexPath.row]! as ContentModel
+        cell.updateUIWithModel(model)
         return cell
     }
     
+    //MARK: UICollectionDataSource
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = ContentViewController()
+        let model = self.dataSource[indexPath.row]!
+        controller.contentModel = model
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
 }
