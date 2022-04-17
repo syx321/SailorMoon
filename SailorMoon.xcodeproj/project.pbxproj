@@ -13,7 +13,6 @@
 		2C9D5540280B0D44008FBFA9 /* ContentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D553F280B0D44008FBFA9 /* ContentTableView.swift */; };
 		2C9D5542280B1160008FBFA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D5541280B1160008FBFA9 /* Constant.swift */; };
 		4D571AAF280C0426001AF417 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D571AAC280C0425001AF417 /* UIImage+Extension.swift */; };
-		4D571AB0280C0426001AF417 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D571AAD280C0425001AF417 /* UIColor+Extension.swift */; };
 		4D571AB1280C0426001AF417 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D571AAE280C0426001AF417 /* Date+Extension.swift */; };
 		4D571AB3280C0454001AF417 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D571AB2280C0454001AF417 /* String+Extension.swift */; };
 		4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B366A280A69E600007603 /* AppDelegate.swift */; };
@@ -29,6 +28,7 @@
 		4D6B369F280B132100007603 /* ShowNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B369E280B132100007603 /* ShowNoteUseCase.swift */; };
 		4D6B36A1280B133200007603 /* ShowNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B36A0280B133200007603 /* ShowNoteModel.swift */; };
 		4D6B36A3280B145A00007603 /* ShowNoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B36A2280B145A00007603 /* ShowNoteCollectionCell.swift */; };
+		4DCA5963280C227E00AE65F4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		2C9D5541280B1160008FBFA9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3E13363DE8355F38782A87BE /* Pods-SailorMoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.debug.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.debug.xcconfig"; sourceTree = "<group>"; };
 		4D571AAC280C0425001AF417 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		4D571AAD280C0425001AF417 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../../../../../../../../Volumes/syx-T7/SailorMoon/SailorMoon/Util/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4D571AAE280C0426001AF417 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4D571AB2280C0454001AF417 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		4D6B3667280A69E600007603 /* SailorMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailorMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +55,7 @@
 		4D6B369E280B132100007603 /* ShowNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteUseCase.swift; sourceTree = "<group>"; };
 		4D6B36A0280B133200007603 /* ShowNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteModel.swift; sourceTree = "<group>"; };
 		4D6B36A2280B145A00007603 /* ShowNoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteCollectionCell.swift; sourceTree = "<group>"; };
+		4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,7 +161,7 @@
 				4D571AAE280C0426001AF417 /* Date+Extension.swift */,
 				4D571AB2280C0454001AF417 /* String+Extension.swift */,
 				2C9D553A280B0A1B008FBFA9 /* UITextField+Extension.swift */,
-				4D571AAD280C0425001AF417 /* UIColor+Extension.swift */,
+				4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */,
 				4D571AAC280C0425001AF417 /* UIImage+Extension.swift */,
 			);
 			path = Util;
@@ -366,8 +366,8 @@
 				4D6B36A1280B133200007603 /* ShowNoteModel.swift in Sources */,
 				4D6B36A3280B145A00007603 /* ShowNoteCollectionCell.swift in Sources */,
 				4D571AB3280C0454001AF417 /* String+Extension.swift in Sources */,
+				4DCA5963280C227E00AE65F4 /* UIColor+Extension.swift in Sources */,
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
-				4D571AB0280C0426001AF417 /* UIColor+Extension.swift in Sources */,
 				4D6B369F280B132100007603 /* ShowNoteUseCase.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,

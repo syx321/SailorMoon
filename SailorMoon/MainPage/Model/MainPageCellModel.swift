@@ -7,13 +7,7 @@
 
 import Foundation
 
-enum Priority {
-    case red
-    case blue
-    case green
-}
 
 struct MainPageCellModel {
-    let priority: Priority?
     let title: String?
 }

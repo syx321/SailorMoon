@@ -9,19 +9,17 @@ import Foundation
 
 class MainPageUseCase: NSObject {
     func getMainPageModels(completion: ([MainPageCellModel?]) -> Void) {
-        completion([MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .green, title: "这是一个分类"),
-                    MainPageCellModel(priority: .blue, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),
-                    MainPageCellModel(priority: .red, title: "这是一个分类"),])
+        completion([MainPageCellModel(title: "这是一个分类"),
+                    MainPageCellModel(title: "这是一个分类"),
+                    MainPageCellModel(title: "这是一个分类"),
+                    MainPageCellModel(title: "这是一个分类"),])
+    }
+    
+    func deletePageModel(_ model: MainPageCellModel) {
+        
+    }
+    
+    func addDictionary(_ title: String) {
+        
     }
 }

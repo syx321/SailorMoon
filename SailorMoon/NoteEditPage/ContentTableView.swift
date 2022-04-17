@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+enum OpenPageType {
+    case add
+    case edit
+}
+
 class ContentViewController: UIViewController {
     
     //    var title: String?
@@ -17,6 +22,7 @@ class ContentViewController: UIViewController {
     //    var updateAt: Date?
     //    var buildTime: Date?
     //    var coverImage: UIImage?
+    var openType: OpenPageType = .edit
     var contentModel: ContentModel?
     var displayUpdateTimeLable: Bool = false
     private lazy var coverImageView: UIImageView = {
@@ -87,7 +93,6 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configLayout()
-        
     }
     
     func configLayout() {

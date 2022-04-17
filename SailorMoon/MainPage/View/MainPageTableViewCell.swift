@@ -8,19 +8,17 @@
 import Foundation
 import UIKit
 
+enum EditType{
+    case edit
+    case delete
+}
+
 class MainPageTableViewCell: UITableViewCell {
+    
+    var editType: EditType = .delete
     
     private lazy var containerView: UIView = {
         var v = UIView()
-        return v
-    }()
-    
-    private lazy var circle: UIView = {
-        var v = UIView()
-        v.layer.cornerRadius = 25; //设置圆形的程度
-        v.layer.masksToBounds = true; //设置是否切圆
-        v.layer.borderColor = CGColor(gray: 1, alpha: 0.5)
-        v.layer.borderWidth = 1; //设置圆环的粗细宽度
         return v
     }()
     
@@ -49,7 +47,6 @@ class MainPageTableViewCell: UITableViewCell {
     
     func setupSubviews() {
         addSubview(containerView)
-        containerView.addSubview(circle)
         containerView.addSubview(titleLabel)
         containerView.addSubview(indicator)
     }
@@ -64,13 +61,9 @@ class MainPageTableViewCell: UITableViewCell {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(5)
         }
-        circle.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(5)
-            make.width.height.equalTo(50)
-            make.centerY.equalToSuperview()
-        }
+
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(circle.snp.right).offset(10)
+            make.left.equalToSuperview().offset(10)
             make.top.bottom.equalToSuperview()
         }
         indicator.snp.makeConstraints { make in
@@ -82,15 +75,5 @@ class MainPageTableViewCell: UITableViewCell {
     
     func updateUIWithModel(_ model: MainPageCellModel) {
         self.titleLabel.text = model.title!
-        switch model.priority {
-        case .red:
-            self.circle.backgroundColor = .red
-        case .green:
-            self.circle.backgroundColor = .green
-        case .blue:
-            self.circle.backgroundColor = .blue
-        case .none:
-            self.circle.backgroundColor = .none
-        }
     }
 }

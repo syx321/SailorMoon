@@ -72,6 +72,10 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
         navigationView.actionEvent = { [weak self] event in
             if event == .back {
                 self?.navigationController?.popViewController(animated: true)
+            } else if event == .add {
+                let controller = ContentViewController()
+                
+                self?.navigationController?.pushViewController(ContentViewController(), animated: true)
             }
         }
     }

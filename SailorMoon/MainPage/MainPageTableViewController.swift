@@ -12,6 +12,7 @@ import SnapKit
 
 class MainPageTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var selectCell: MainPageTableViewCell? = nil
     //MARK: UI
     private lazy var containerView: UIView = {
         var v = UIView()
@@ -80,6 +81,11 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
             make.left.right.equalToSuperview().inset(5)
             make.bottom.equalToSuperview()
         }
+        navigationView.actionEvent = { [weak self] event in
+            if event == .add {
+                self?.insert()
+            }
+        }
     }
     
     private func setupData() {
@@ -87,6 +93,22 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
             self!.dataSource = models
             self!.tableView.reloadData()
         }
+    }
+    
+    private func insert() {
+        let alert = UIAlertController(title: "创建", message: nil, preferredStyle: .alert)
+        var textField: UITextField = UITextField()
+        alert.addTextField { textField in
+            textField.placeholder = "请输入目录";
+        }
+        alert.addAction(UIAlertAction(title: "确认", style: .default, handler: {[weak self] action in
+            textField = (alert.textFields?.first)!
+            self?.dataSource.insert(MainPageCellModel(title: textField.text), at: 0)
+            self?.useCase.addDictionary(textField.text ?? "默认")
+            self?.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        self.present(alert, animated: false, completion: nil)
     }
     
     //MARK: UITableViewDatasource
@@ -113,8 +135,9 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        let model = self.dataSource[indexPath.row]!
         self.dataSource.remove(at: indexPath.row)
+        self.useCase.deletePageModel(model)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -124,4 +147,5 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "删除"
     }
+    
 }
