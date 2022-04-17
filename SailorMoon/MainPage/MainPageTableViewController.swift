@@ -18,6 +18,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
         v.backgroundColor = UIColor.backgroundColor()
         return v
     }()
+    
     private lazy var tableView: UITableView = {
         var v = UITableView()
         v.backgroundColor = UIColor.backgroundColor()
@@ -28,11 +29,9 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
         v.separatorStyle = .none
         v.contentInsetAdjustmentBehavior = .never
         v.contentInset = .zero
-        v.register(MainPageTableViewCell.self, forCellReuseIdentifier: cellIdentifer)
+        v.register(MainPageTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(MainPageTableViewCell.self))
         return v
     }()
-    
-    private let cellIdentifer = "MainPageTableViewCell"
     
     private lazy var navigationView: SMNavigationView = {
         let v = SMNavigationView()
@@ -76,9 +75,10 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
             make.left.right.top.equalToSuperview()
             make.height.equalTo(85)
         }
-        self.tableView.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.equalTo(navigationView.snp.bottom).offset(3)
-            make.left.bottom.right.equalToSuperview().inset(5)
+            make.left.right.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -95,7 +95,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as! MainPageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MainPageTableViewCell.self), for: indexPath) as! MainPageTableViewCell
         let model = self.dataSource[indexPath.row]! as MainPageCellModel
         cell.updateUIWithModel(model)
         return cell
