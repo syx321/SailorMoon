@@ -12,6 +12,7 @@ enum SMNavigationEvent {
     case back
     case close
     case add
+    case delete
 }
 
 typealias SMNavigationAction = (_ envet: SMNavigationEvent) -> ()
@@ -26,12 +27,14 @@ class SMNavigationView: UIView {
     private let backIcon        = "chevron.backward"
     private let closeIcon       = "xmark"
     private let addIcon         = "plus.circle"
+    private let deleteIcon      = "trash"
     private let defaultTitle = "分类"
     
     var isShowTitleItem     = true
     var isShowCloseItem     = false
     var isShowBackItem      = false
     var isShowAddItem       = false
+    var isShowDeleteItem    = false
 
     var title: String? {
         didSet {
@@ -44,6 +47,7 @@ class SMNavigationView: UIView {
     lazy var backButton:   UIButton = createButtonItem(backIcon,    #selector(backAction))
     lazy var closeButton:  UIButton = createButtonItem(closeIcon,   #selector(closeAction))
     lazy var addButton:    UIButton = createButtonItem(addIcon,     #selector(addAction))
+    lazy var deleteButton: UIButton = createButtonItem(deleteIcon,  #selector(deleteAction))
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -109,6 +113,14 @@ class SMNavigationView: UIView {
             make.edges.equalToSuperview()
         }
         
+        addSubview(deleteButton)
+        deleteButton.snp.makeConstraints { make in
+            make.edges.equalTo(addButton)
+        }
+        deleteButton.imageView?.snp.makeConstraints({ make in
+            make.edges.equalTo(deleteButton)
+        })
+        
         addSubview(line)
         line.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -124,6 +136,7 @@ class SMNavigationView: UIView {
         closeButton.isHidden    = !isShowCloseItem
         addButton.isHidden      = !isShowAddItem
         titleLabel.isHidden     = !isShowTitleItem
+        deleteButton.isHidden   = !isShowDeleteItem
         if isShowTitleItem {
             titleLabel.text = title ?? defaultTitle
         }
@@ -151,6 +164,12 @@ extension SMNavigationView {
     @objc private func addAction() -> Void {
         if actionEvent != nil {
             actionEvent!(.add)
+        }
+    }
+    
+    @objc private func deleteAction() -> Void {
+        if actionEvent != nil {
+            actionEvent!(.delete)
         }
     }
 }

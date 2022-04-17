@@ -68,30 +68,34 @@ class ContentViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.frame = self.view.frame
+        tableView.frame = .zero
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
     }()
+    
+    private lazy var navigationView: SMNavigationView = {
+        let v = SMNavigationView()
+        v.isShowCloseItem = true
+        v.isShowBackItem = false
+        v.isShowAddItem = false
+        v.isShowDeleteItem = true
+        v.title = "编辑"
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configLayout()
         
-        
-        
-        
-        
-        
-        
     }
-    
     
     func configLayout() {
         view.accessibilityIgnoresInvertColors = true
         view.backgroundColor = .quaternarySystemFill
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: contentTableViewCell)
         view.addSubview(tableView)
-        
+        self.navigationController?.navigationBar.isHidden = true
         
         // buildTimeView
         tableView.addSubview(buildTimeView)
@@ -109,8 +113,6 @@ class ContentViewController: UIViewController {
         timeLable.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        
-        
         
         // titleTextField
         tableView.addSubview(titleField)
@@ -142,9 +144,24 @@ class ContentViewController: UIViewController {
             make.bottom.equalTo(view.snp.bottom)
         }
         
-        let backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(backAndStore))
-        self.navigationItem.leftBarButtonItem = backBarButtonItem
+        view.addSubview(navigationView)
+        navigationView.snp.makeConstraints { make in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(85)
+        }
+        navigationView.actionEvent = {[weak self] event in
+            if event == .close {
+                self?.navigationController?.popViewController(animated: true)
+            } else if event == .delete {
+                
+            }
+        }
+        navigationView.updateUI()
         
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+        }
     }
     
     @objc func addImage() {
@@ -166,10 +183,6 @@ class ContentViewController: UIViewController {
             timeLable.text = "创建于: \(contentModel?.buildTime ?? Date.now)"
         }
         
-    }
-    
-    @objc func backAndStore() {
-        //
     }
 }
 
