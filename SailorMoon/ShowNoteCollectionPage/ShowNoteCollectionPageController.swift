@@ -11,6 +11,7 @@ import SnapKit
 
 class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    var category: String = ""
     //MARK: UI
     private lazy var containerView: UIView = {
         var v = UIView()
@@ -59,8 +60,12 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSubviews()
-        self.setupData()
         self.setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupData()
     }
     
     private func setupSubviews() {
@@ -74,8 +79,8 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
                 self?.navigationController?.popViewController(animated: true)
             } else if event == .add {
                 let controller = ContentViewController()
-                
-                self?.navigationController?.pushViewController(ContentViewController(), animated: true)
+                controller.category = self!.category
+                self?.navigationController?.pushViewController(controller, animated: true)
             }
         }
     }
@@ -98,7 +103,7 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
     }
     
     private func setupData() {
-        self.useCase.getMainPageModels {[weak self] models in
+        self.useCase.getShowCollectionPageModels(self.category) {[weak self] models in
             self!.dataSource = models
             self!.collectionView.reloadData()
         }
@@ -121,6 +126,8 @@ class ShowNoteCollectionPageController: UIViewController, UICollectionViewDelega
         let controller = ContentViewController()
         let model = self.dataSource[indexPath.row]!
         controller.contentModel = model
+        controller.category = category
+        controller.contentIndex = indexPath.row
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

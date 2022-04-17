@@ -7,10 +7,11 @@
 
 import UIKit
 
-struct ContentModel {
+struct ContentModel: Codable {
     let title: String?
     let content: String?
     let updateTime: Date?
     let buildTime: Date?
-    let coverImage: UIImage?
+    let coverImage: Data?
+    let contentImage: Data?
 }

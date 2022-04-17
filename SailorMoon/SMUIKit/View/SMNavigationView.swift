@@ -13,6 +13,7 @@ enum SMNavigationEvent {
     case close
     case add
     case delete
+    case none
 }
 
 typealias SMNavigationAction = (_ envet: SMNavigationEvent) -> ()

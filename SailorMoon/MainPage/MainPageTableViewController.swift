@@ -103,7 +103,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
         alert.addAction(UIAlertAction(title: "确认", style: .default, handler: {[weak self] action in
             textField = (alert.textFields?.first)!
-            self?.dataSource.insert(MainPageCellModel(title: textField.text), at: 0)
+            self?.dataSource.insert(MainPageCellModel(title: textField.text!), at: 0)
             self?.useCase.addDictionary(textField.text ?? "默认")
             self?.tableView.reloadData()
         }))
@@ -126,7 +126,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = ShowNoteCollectionPageController()
-        
+        controller.category = self.dataSource[indexPath.row]!.title
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -138,6 +138,7 @@ class MainPageTableViewController: UIViewController, UITableViewDelegate, UITabl
         let model = self.dataSource[indexPath.row]!
         self.dataSource.remove(at: indexPath.row)
         self.useCase.deletePageModel(model)
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

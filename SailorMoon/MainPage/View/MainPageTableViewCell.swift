@@ -74,6 +74,6 @@ class MainPageTableViewCell: UITableViewCell {
     }
     
     func updateUIWithModel(_ model: MainPageCellModel) {
-        self.titleLabel.text = model.title!
+        self.titleLabel.text = model.title
     }
 }

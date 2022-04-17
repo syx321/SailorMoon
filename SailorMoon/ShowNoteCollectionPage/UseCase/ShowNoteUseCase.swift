@@ -8,7 +8,8 @@
 import Foundation
 
 class ShowNoteUseCase: NSObject {
-    func getMainPageModels(completion: ([ContentModel?]) -> Void) {
-        completion([ContentModel(title: "title", content: "content", updateTime: nil, buildTime: nil, coverImage: nil)])
+    func getShowCollectionPageModels(_ title: String, completion: ([ContentModel?]) -> Void) {
+        let dict = Storage.getAllData()
+        completion(dict[title] ?? [])
     }
 }

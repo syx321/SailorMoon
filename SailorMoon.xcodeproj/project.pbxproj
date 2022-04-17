@@ -26,9 +26,9 @@
 		4D6B368F280AAAE100007603 /* SMNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B368E280AAAE100007603 /* SMNavigationView.swift */; };
 		4D6B369D280AF82200007603 /* ShowNoteCollectionPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */; };
 		4D6B369F280B132100007603 /* ShowNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B369E280B132100007603 /* ShowNoteUseCase.swift */; };
-		4D6B36A1280B133200007603 /* ShowNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B36A0280B133200007603 /* ShowNoteModel.swift */; };
 		4D6B36A3280B145A00007603 /* ShowNoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B36A2280B145A00007603 /* ShowNoteCollectionCell.swift */; };
 		4DCA5963280C227E00AE65F4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */; };
+		4DCA5965280C2BFA00AE65F4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA5964280C2BFA00AE65F4 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +53,9 @@
 		4D6B368E280AAAE100007603 /* SMNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMNavigationView.swift; sourceTree = "<group>"; };
 		4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteCollectionPageController.swift; sourceTree = "<group>"; };
 		4D6B369E280B132100007603 /* ShowNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteUseCase.swift; sourceTree = "<group>"; };
-		4D6B36A0280B133200007603 /* ShowNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteModel.swift; sourceTree = "<group>"; };
 		4D6B36A2280B145A00007603 /* ShowNoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNoteCollectionCell.swift; sourceTree = "<group>"; };
 		4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4DCA5964280C2BFA00AE65F4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5BB1F9655EBDD5B6EBCA5A10 /* Pods-SailorMoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SailorMoon.release.xcconfig"; path = "Target Support Files/Pods-SailorMoon/Pods-SailorMoon.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A2E78BEC7F35B70BC68F /* Pods_SailorMoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SailorMoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				4D6B369C280AF82200007603 /* ShowNoteCollectionPageController.swift */,
-				4D6B369A280AF79F00007603 /* Model */,
 				4D6B369B280AF7A400007603 /* UseCase */,
 				4D6B3699280AF79700007603 /* View */,
 			);
@@ -163,6 +162,7 @@
 				2C9D553A280B0A1B008FBFA9 /* UITextField+Extension.swift */,
 				4DCA5962280C227E00AE65F4 /* UIColor+Extension.swift */,
 				4D571AAC280C0425001AF417 /* UIImage+Extension.swift */,
+				4DCA5964280C2BFA00AE65F4 /* Storage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -221,14 +221,6 @@
 				4D6B36A2280B145A00007603 /* ShowNoteCollectionCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4D6B369A280AF79F00007603 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4D6B36A0280B133200007603 /* ShowNoteModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4D6B369B280AF7A400007603 /* UseCase */ = {
@@ -363,12 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6B36A1280B133200007603 /* ShowNoteModel.swift in Sources */,
 				4D6B36A3280B145A00007603 /* ShowNoteCollectionCell.swift in Sources */,
 				4D571AB3280C0454001AF417 /* String+Extension.swift in Sources */,
 				4DCA5963280C227E00AE65F4 /* UIColor+Extension.swift in Sources */,
 				4D6B366F280A69E600007603 /* MainPageTableViewController.swift in Sources */,
 				4D6B369F280B132100007603 /* ShowNoteUseCase.swift in Sources */,
+				4DCA5965280C2BFA00AE65F4 /* Storage.swift in Sources */,
 				4D6B366B280A69E600007603 /* AppDelegate.swift in Sources */,
 				4D6B3688280A77A300007603 /* MainPageTableViewCell.swift in Sources */,
 				2C9D553B280B0A1B008FBFA9 /* UITextField+Extension.swift in Sources */,

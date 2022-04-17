@@ -15,19 +15,16 @@ enum OpenPageType {
 
 class ContentViewController: UIViewController {
     
-    //    var title: String?
-    //    var audio: Data?
-    //    var content: String?
-    //    var images: [UIImage]?
-    //    var updateAt: Date?
-    //    var buildTime: Date?
-    //    var coverImage: UIImage?
+    var contentIndex: Int = 0
+    var category: String = ""
+    var contentModelArray: [ContentModel]?
+    var dataSource: [String: [ContentModel]?]?
+    
     var openType: OpenPageType = .edit
     var contentModel: ContentModel?
     var displayUpdateTimeLable: Bool = false
-    private lazy var coverImageView: UIImageView = {
+    private lazy var contentImageView: UIImageView = {
         let imageView = UIImageView()
-        // MARK: BUG待解决
         imageView.contentMode = .center
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
@@ -93,6 +90,62 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configLayout()
+        dataFromContentModel()
+    }
+    
+    func dataFromContentModel() {
+        
+        self.dataSource = Storage.getAllData()
+        //拿到之前存储的Model
+        guard let contentModel = contentModel else { return }
+        contentModelArray = dataSource![self.category] ?? []
+        contentImageView.image = UIImage(optionalData: contentModel.contentImage)
+        contentImageView.contentMode = .scaleAspectFill
+        titleField.text = contentModel.title
+        contentView.text = contentModel.content
+        timeLable.text = "创建于: \(contentModel.buildTime?.formattedTime ?? Date.now.formattedTime)"
+    }
+    
+//    //拿到所有的数据
+//    func getAllData() {
+//        if let data = UserDefaults.standard.data(forKey: "DataSource"){
+//            do{
+//                dataSource = try JSONDecoder().decode([String: [ContentModel]].self, from: data)
+//            }catch{
+//                print(error)
+//            }
+//        }
+//    }
+    
+    //存储
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !titleField.exctString.isEmpty || !contentView.exctString.isEmpty || contentImageView.image != nil {
+            do{
+                // 拿到数组
+                contentModelArray = dataSource![self.category] ?? []
+                if contentModel == nil {
+                    // 新建
+                    contentModel = ContentModel(title: titleField.exctString, content: contentView.exctString, updateTime: Date.now, buildTime: contentModel?.buildTime, coverImage: contentImageView.image?.jpegCompress(.middle), contentImage: contentImageView.image?.pngData())
+                    // 追加
+                    contentModelArray?.append(contentModel!)
+                } else {
+                    // 修改
+                    contentModel = ContentModel(title: titleField.exctString, content: contentView.exctString, updateTime: Date.now, buildTime: contentModel?.buildTime, coverImage: contentImageView.image?.jpegCompress(.middle), contentImage: contentImageView.image?.pngData())
+                    // 修改具体ContentModel
+                    contentModelArray![self.contentIndex] = contentModel!
+                }
+                dataSource![self.category] = contentModelArray
+                let data = try JSONEncoder().encode(dataSource)
+                //再进行存储
+                UserDefaults.standard.set(data, forKey: "DataSource")
+            }catch{
+                print(error)
+            }
+        } else {
+            //无内容 删除该contentModel
+            contentModelArray?.remove(at: contentIndex)
+        }
     }
     
     func configLayout() {
@@ -129,23 +182,23 @@ class ContentViewController: UIViewController {
         }
         
         // imageView
-        tableView.addSubview(coverImageView)
-        coverImageView.snp.makeConstraints { make in
+        tableView.addSubview(contentImageView)
+        contentImageView.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left).offset(10)
             make.right.equalTo(view.snp.right).offset(-10)
             make.top.equalTo(titleField.snp.bottom).offset(12)
             make.height.equalTo(300)
         }
-        coverImageView.isUserInteractionEnabled = true
+        contentImageView.isUserInteractionEnabled = true
         let clickAddImagePan = UITapGestureRecognizer(target: self, action: #selector(addImage))
-        coverImageView.addGestureRecognizer(clickAddImagePan)
+        contentImageView.addGestureRecognizer(clickAddImagePan)
         
         // contentView
         tableView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left).offset(10)
             make.right.equalTo(view.snp.right).offset(-10)
-            make.top.equalTo(coverImageView.snp.bottom).offset(12)
+            make.top.equalTo(contentImageView.snp.bottom).offset(12)
             make.bottom.equalTo(view.snp.bottom)
         }
         
@@ -154,14 +207,19 @@ class ContentViewController: UIViewController {
             make.left.right.top.equalToSuperview()
             make.height.equalTo(85)
         }
+        navigationView.updateUI()
+        var tmp = 1
         navigationView.actionEvent = {[weak self] event in
             if event == .close {
                 self?.navigationController?.popViewController(animated: true)
             } else if event == .delete {
-                
+                if tmp == 1{
+                    Storage.deleteContent(self!.category, self!.contentIndex)
+                    self?.navigationController?.popViewController(animated: true)
+                }
+                tmp -= 1
             }
         }
-        navigationView.updateUI()
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(navigationView.snp.bottom)
@@ -209,8 +267,8 @@ extension ContentViewController: UIImagePickerControllerDelegate & UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage{
-            coverImageView.contentMode = .scaleAspectFill
-            coverImageView.image = image
+            contentImageView.contentMode = .scaleAspectFill
+            contentImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)
     }

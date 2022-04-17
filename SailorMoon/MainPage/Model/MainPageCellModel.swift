@@ -9,5 +9,5 @@ import Foundation
 
 
 struct MainPageCellModel {
-    let title: String?
+    let title: String
 }
